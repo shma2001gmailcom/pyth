@@ -1,25 +1,25 @@
-#include "Queue.h"
+#include "../include/Queue.h"
 
-Queue::Queue() {}
+Queue::Queue() = default;
 
-Queue::~Queue()
-{
-    //dtor
-}
+Queue::~Queue() = default;
 
-void Queue::push(Node n)
-{
+void Queue::push(Node n) {
     nodes.push_front(n);
 }
 
-Node Queue::pop()
-{
+Node Queue::pop() {
     Node result = Node(nodes.back());
     nodes.pop_back();
     return result;
 }
 
-int Queue::size()
-{
-    return nodes.size();
+
+int Queue::size() {
+    return static_cast<int>(nodes.size());
+}
+
+void Queue::pushBoth(Node n) {
+    push(*(n.nextL()));
+    push(*(n.nextU()));
 }

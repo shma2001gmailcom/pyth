@@ -1,38 +1,45 @@
 #ifndef MATRIX_H
 #define MATRIX_H
+
 #include <string>
 #include "Row.h"
 
 using namespace std;
 
-class Matrix
-{
+class Matrix {
 public:
     Matrix();
+
     Matrix(Row, Row);
+
     virtual ~Matrix();
-    Matrix(const Matrix& other);
-    Matrix& operator=(const Matrix& other);
-    Row Getfirst()
-    {
+
+    Matrix(const Matrix &other);
+
+    Matrix &operator=(const Matrix &other);
+
+    Row Getfirst() {
         return first;
     }
-    void Setfirst(Row val)
-    {
+
+    void Setfirst(Row val) {
         first = val;
     }
-    Row Getsecond()
-    {
+
+    Row Getsecond() {
         return second;
     }
-    void Setsecond(Row val)
-    {
+
+    void Setsecond(Row val) {
         second = val;
     }
-    Matrix* mult(Matrix* another);
+
+    Matrix *mult(Matrix *another);
+
     void print();
+
     string toString();
-    static Matrix* matrice(Row, Row);
+
 protected:
 private:
     Row first;

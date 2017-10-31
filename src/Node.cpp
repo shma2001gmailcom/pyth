@@ -1,52 +1,45 @@
-#include "Node.h"
 #include <iostream>
-#include "UL.h"
+#include "../include/Node.h"
+#include "../include/UL.h"
 
 using namespace std;
 
-Node::Node() {}
+Node::Node() = default;
 
-Node::Node(Matrix* c)
-{
+Node::Node(Matrix *c) {
     content = c;
 }
 
 Node::~Node()
-{
+= default;
 
-}
-
-Node::Node(const Node& other)
-{
+Node::Node(const Node &other) {
     content = other.content;
     nodeU = other.nodeU;
     nodeL = other.nodeL;
 }
 
-void Node::print()
-{
-    if (content != 0) content->print();
-    else cout<<"content: null ";
-    if (nodeU != 0) nodeU->print();
-    else cout<<"nodeU: null ";
-    if (nodeL != 0) nodeL->print();
-    else cout<<"nodeL: null\n";
+void Node::print() {
+    if (content != nullptr) content->print();
+    else cout << "content: null ";
+    if (nodeU != nullptr) nodeU->print();
+    else cout << "nodeU: null ";
+    if (nodeL != nullptr) nodeL->print();
+    else cout << "nodeL: null\n";
 }
 
-Node* Node::nextU()
-{
-    Node* u = new Node();
+Node *Node::nextU() {
+    auto *u = new Node();
     u->setContent(content->mult(UL::getU()));
-    u->setNodeL(0);
-    u->setNodeU(0);
+    u->setNodeL(nullptr);
+    u->setNodeU(nullptr);
     return u;
 }
 
-Node* Node::nextL()
-{
-    Node* l = new Node();
+Node *Node::nextL() {
+    auto *l = new Node();
     l->setContent(content->mult(UL::getL()));
-    l->setNodeL(0);
-    l->setNodeU(0);
+    l->setNodeL(nullptr);
+    l->setNodeU(nullptr);
     return l;
 }

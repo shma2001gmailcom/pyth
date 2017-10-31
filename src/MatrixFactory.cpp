@@ -1,6 +1,5 @@
-#include "Matrix.h"
+#include "../include/Matrix.h"
 
-Matrix* matrice(Row f, Row s)
-{
+Matrix *matrice(const Row &f, const Row &s) {
     return new Matrix(f, s);
 }
