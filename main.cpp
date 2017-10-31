@@ -13,12 +13,13 @@ int main() {
     delete u0;
     q->push(*l0);
     delete l0;
-    for (int i = 0; i < 6; ++i) {
+    for (int i = 0; i < 1020; ++i) {
         Node node = q->pop();
         node.print();
         q->pushBoth(node);
         cout << q->size() << endl;
     }
     q->pop().print();
+    delete q;
     return 0;
 }

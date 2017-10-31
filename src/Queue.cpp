@@ -20,6 +20,10 @@ int Queue::size() {
 }
 
 void Queue::pushBoth(Node n) {
-    push(*(n.nextL()));
-    push(*(n.nextU()));
+    Node *nextL = n.nextL();
+    push(*nextL);
+    delete nextL;
+    Node *nextU = n.nextU();
+    push(*nextU);
+    delete nextL;
 }
