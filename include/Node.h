@@ -13,15 +13,9 @@ public:
 
     Node(const Node &other);
 
-    Matrix *getContent() { return content; }
-
     void setContent(Matrix *val) { content = val; }
 
-    Node *getNodeU() { return nodeU; }
-
     void setNodeU(Node *val) { nodeU = val; }
-
-    Node *getNodeL() { return nodeL; }
 
     void setNodeL(Node *val) { nodeL = val; }
 

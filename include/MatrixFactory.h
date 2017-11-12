@@ -3,6 +3,6 @@
 
 #include "Matrix.h"
 
-Matrix *matrice(const Row &, const Row &);
+Matrix *getMatrix(const Row &, const Row &);
 
 #endif // MATRIXFACTORY_H_INCLUDED

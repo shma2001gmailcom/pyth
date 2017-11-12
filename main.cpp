@@ -13,7 +13,7 @@ int main() {
     delete u0;
     q->push(*l0);
     delete l0;
-    for (int i = 0; i < 1020; ++i) {
+    for (int i = 0; i < 1020000; ++i) {
         Node node = q->pop();
         node.print();
         q->pushBoth(node);

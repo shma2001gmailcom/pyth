@@ -21,16 +21,13 @@ Node::Node(const Node &other) {
 
 void Node::print() {
     if (content != nullptr) content->print();
-    else cout << "content: null ";
     if (nodeU != nullptr) nodeU->print();
-    else cout << "nodeU: null ";
     if (nodeL != nullptr) nodeL->print();
-    else cout << "nodeL: null\n";
 }
 
 Node *Node::nextU() {
     auto *u = new Node();
-    u->setContent(content->mult(UL::getU()));
+    u->setContent(content->times(UL::getU()));
     u->setNodeL(nullptr);
     u->setNodeU(nullptr);
     return u;
@@ -38,7 +35,7 @@ Node *Node::nextU() {
 
 Node *Node::nextL() {
     auto *l = new Node();
-    l->setContent(content->mult(UL::getL()));
+    l->setContent(content->times(UL::getL()));
     l->setNodeL(nullptr);
     l->setNodeU(nullptr);
     return l;

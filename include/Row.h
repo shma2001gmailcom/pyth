@@ -23,13 +23,9 @@ public:
 
     Row(const Row &other);
 
-    int Getone() { return one; }
+    int getOne() { return one; }
 
-    void Setone(int val) { one = val; }
-
-    int Gettwo() { return two; }
-
-    void Settwo(int val) { two = val; }
+    int getTwo() { return two; }
 
 protected:
 private:

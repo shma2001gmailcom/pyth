@@ -18,23 +18,23 @@ public:
 
     Matrix &operator=(const Matrix &other);
 
-    Row Getfirst() {
+    Row getFirst() {
         return first;
     }
 
-    void Setfirst(Row val) {
+    void setFirst(Row val) {
         first = val;
     }
 
-    Row Getsecond() {
+    Row getSecond() {
         return second;
     }
 
-    void Setsecond(Row val) {
+    void setSecond(Row val) {
         second = val;
     }
 
-    Matrix *mult(Matrix *another);
+    Matrix *times(Matrix *another);
 
     void print();
 

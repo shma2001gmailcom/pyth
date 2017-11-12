@@ -25,5 +25,5 @@ void Queue::pushBoth(Node n) {
     delete nextL;
     Node *nextU = n.nextU();
     push(*nextU);
-    delete nextL;
+    delete nextU;
 }
