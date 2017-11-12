@@ -24,17 +24,17 @@ Matrix &Matrix::operator=(const Matrix &rhs) {
 
 Matrix *Matrix::times(Matrix *another) {
     Row *row1 = new Row(first.getOne() * another->first.getOne()
-                        + first.getTwo() * another->getSecond().getOne(),
+                        + first.getTwo() * another->second.getOne(),
                         first.getOne() * another->first.getTwo()
-                        + first.getTwo() * another->getSecond().getTwo());
+                        + first.getTwo() * another->second.getTwo());
     auto *result = new Matrix();
-    result->setFirst(*row1);
+    result->first =*row1;
     delete row1;
     Row *row2 = new Row(second.getOne() * another->first.getOne()
-                        + second.getTwo() * another->getSecond().getOne(),
+                        + second.getTwo() * another->second.getOne(),
                         second.getOne() * another->first.getTwo()
-                        + second.getTwo() * another->getSecond().getTwo());
-    result->setSecond(*row2);
+                        + second.getTwo() * another->second.getTwo());
+    result->second = *row2;
     delete row2;
     return result;
 }

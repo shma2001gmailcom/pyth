@@ -18,22 +18,6 @@ public:
 
     Matrix &operator=(const Matrix &other);
 
-    Row getFirst() {
-        return first;
-    }
-
-    void setFirst(Row val) {
-        first = val;
-    }
-
-    Row getSecond() {
-        return second;
-    }
-
-    void setSecond(Row val) {
-        second = val;
-    }
-
     Matrix *times(Matrix *another);
 
     void print();
