@@ -10,7 +10,7 @@ Matrix::Matrix(Row f, Row s) {
     second = s;
 }
 
-Matrix::~Matrix() = default;;
+Matrix::~Matrix() = default;
 
 Matrix::Matrix(const Matrix &other) {
     first = other.first;
