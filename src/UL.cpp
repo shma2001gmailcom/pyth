@@ -1,6 +1,7 @@
 #include "../include/UL.h"
 #include "../include/MatrixFactory.h"
 
+/*two lazy-load constant matrices*/
 Matrix *UL::u = nullptr;
 Matrix *UL::l = nullptr;
 
