@@ -3,6 +3,8 @@
 #include "include/Queue.h"
 #include "include/UL.h"
 
+void doNodes(Queue *q);
+
 using namespace std;
 
 int main() {
@@ -13,13 +15,15 @@ int main() {
     delete u0;
     q->push(*l0);
     delete l0;
-    for (int i = 0; i < 10; ++i) {
-        Node node = q->pop();
-        node.print();
-        q->pushBoth(node);
-        cout << q->size() << endl;
-    }
+    for (int i = 0; i < 10; ++i, doNodes(q));
     q->pop().print();
     delete q;
     return 0;
+}
+
+void doNodes(Queue *q) {
+    Node node = q->pop();
+    node.print();
+    q->pushBoth(node);
+    cout << q->size() << endl;
 }
