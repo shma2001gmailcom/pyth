@@ -10,7 +10,7 @@ Matrix::Matrix(Row f, Row s) {
     second = s;
 }
 
-Matrix::~Matrix() = default;;
+Matrix::~Matrix() = default;
 
 Matrix::Matrix(const Matrix &other) {
     first = other.first;
@@ -23,14 +23,14 @@ Matrix &Matrix::operator=(const Matrix &rhs) {
 };
 
 Matrix *Matrix::times(Matrix *another) {
-    Row *row1 = new Row(first.getOne() * another->first.getOne()
+    auto *row1 = new Row(first.getOne() * another->first.getOne()
                         + first.getTwo() * another->second.getOne(),
                         first.getOne() * another->first.getTwo()
                         + first.getTwo() * another->second.getTwo());
     auto *result = new Matrix();
     result->first = *row1;
     delete row1;
-    Row *row2 = new Row(second.getOne() * another->first.getOne()
+    auto *row2 = new Row(second.getOne() * another->first.getOne()
                         + second.getTwo() * another->second.getOne(),
                         second.getOne() * another->first.getTwo()
                         + second.getTwo() * another->second.getTwo());

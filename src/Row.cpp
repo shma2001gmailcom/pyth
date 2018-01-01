@@ -7,7 +7,7 @@ Row::Row(int x, int y) {
     two = y;
 };
 
-Row::~Row() = default;;
+Row::~Row() = default;
 
 Row::Row(const Row &other) {
     one = other.one;
