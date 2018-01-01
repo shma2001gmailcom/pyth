@@ -28,7 +28,7 @@ Matrix *Matrix::times(Matrix *another) {
                         first.getOne() * another->first.getTwo()
                         + first.getTwo() * another->second.getTwo());
     auto *result = new Matrix();
-    result->first =*row1;
+    result->first = *row1;
     delete row1;
     Row *row2 = new Row(second.getOne() * another->first.getOne()
                         + second.getTwo() * another->second.getOne(),
