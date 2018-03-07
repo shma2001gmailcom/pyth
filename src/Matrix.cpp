@@ -3,26 +3,31 @@
 
 using namespace std;
 
-Matrix::Matrix() : first(Row()), second(Row()) {};
+Matrix::Matrix() : first(Row()), second(Row())
+{};
 
-Matrix::Matrix(Row f, Row s) {
+Matrix::Matrix(Row f, Row s)
+{
     first = f;
     second = s;
 }
 
 Matrix::~Matrix() = default;
 
-Matrix::Matrix(const Matrix &other) {
+Matrix::Matrix(const Matrix &other)
+{
     first = other.first;
     second = other.second;
 };
 
-Matrix &Matrix::operator=(const Matrix &rhs) {
+Matrix &Matrix::operator=(const Matrix &rhs)
+{
     if (this == &rhs) return *this;
     return *this;
 };
 
-Matrix *Matrix::times(Matrix *another) {
+Matrix *Matrix::times(Matrix *another)
+{
     auto *row1 = new Row(first.getOne() * another->first.getOne()
                          + first.getTwo() * another->second.getOne(),
                          first.getOne() * another->first.getTwo()
@@ -39,11 +44,13 @@ Matrix *Matrix::times(Matrix *another) {
     return result;
 }
 
-void Matrix::print() {
+void Matrix::print()
+{
     cout << toString() << endl;
 }
 
-string Matrix::toString() {
+string Matrix::toString()
+{
     return "||" + ToString(first.getOne()) + "  " + ToString(first.getTwo()) + "||\n||"
            + ToString(second.getOne()) + "  " + ToString(second.getTwo()) + "||\n";
 }

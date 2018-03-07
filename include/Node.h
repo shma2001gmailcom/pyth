@@ -3,7 +3,8 @@
 
 #include "Matrix.h"
 
-class Node {
+class Node
+{
 public:
     Node();
 
@@ -13,11 +14,14 @@ public:
 
     Node(const Node &other);
 
-    void setContent(Matrix *val) { content = val; }
+    void setContent(Matrix *val)
+    { content = val; }
 
-    void setNodeU(Node *val) { nodeU = val; }
+    void setNodeU(Node *val)
+    { nodeU = val; }
 
-    void setNodeL(Node *val) { nodeL = val; }
+    void setNodeL(Node *val)
+    { nodeL = val; }
 
     Node *nextU();
 

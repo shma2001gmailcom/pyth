@@ -6,7 +6,8 @@
 
 using namespace std;
 
-class Queue {
+class Queue
+{
 public:
     virtual ~Queue();
 

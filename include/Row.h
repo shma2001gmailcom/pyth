@@ -7,13 +7,15 @@
 using namespace std;
 
 template<typename T>
-string ToString(T val) {
+string ToString(T val)
+{
     stringstream stream;
     stream << val;
     return stream.str();
 }
 
-class Row {
+class Row
+{
 public:
     Row();
 
@@ -23,9 +25,11 @@ public:
 
     Row(const Row &other);
 
-    int getOne() { return one; }
+    int getOne()
+    { return one; }
 
-    int getTwo() { return two; }
+    int getTwo()
+    { return two; }
 
 protected:
 private:

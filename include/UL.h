@@ -3,7 +3,8 @@
 
 #include "Matrix.h"
 
-class UL {
+class UL
+{
 public:
     static Matrix *getU();
 
